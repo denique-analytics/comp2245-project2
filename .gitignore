@@ -1,0 +1,16 @@
+# Private database configuration
+config.php
+
+# Dependencies
+/vendor/
+
+# Environment files
+.env
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
