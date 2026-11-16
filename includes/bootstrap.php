@@ -37,6 +37,13 @@ function require_login(): void
 // Check the submitted CSRF token
 function verify_csrf_token(): bool
 {
-    return isset($_POST['csrf_token'])
-        && hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']);
+    $token = $_POST['csrf_token'] ?? '';
+
+    if ($token === '') {
+        $token = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? '';
+    }
+
+    return is_string($token)
+        && isset($_SESSION['csrf_token'])
+        && hash_equals($_SESSION['csrf_token'], $token);
 }
