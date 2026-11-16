@@ -6,11 +6,11 @@ A web-based help desk application that allows users to create, manage, assign, a
 
 ## Group Members
 
-Denique Whyte – deniquewhyte15@gmail.com
-
-Janae Hill – janaethill09@gmail.com
-
-Jean-Marc De Gannes – soldierdegannes10@gmail.com
+| Name | GitHub Username | What They Worked On |
+|---|---|---|
+| Denique Whyte | denique-analytics | Database, login/logout, sessions, authentication and integration |
+| Janae Hill | janaeeeeeee | Ticket listing, creation, editing and AJAX filters |
+| Jean-Marc De Gannes | JeanMarc7811 | Ticket details, notes, status, assignment and users page |
 
 ## Group Contributions
 
