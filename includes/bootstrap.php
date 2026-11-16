@@ -34,6 +34,21 @@ function require_login(): void
     }
 }
 
+// Return a JSON error if the user is not logged in
+function require_api_login(): void
+{
+    if (!is_logged_in()) {
+        header('Content-Type: application/json');
+        http_response_code(401);
+
+        echo json_encode([
+            'error' => 'You must be logged in.'
+        ]);
+
+        exit;
+    }
+}
+
 // Check the submitted CSRF token
 function verify_csrf_token(): bool
 {
