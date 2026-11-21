@@ -17,6 +17,12 @@ $tickets = $pdo->query($sql)->fetchAll();
 ?>
 
 <h1>Tickets</h1>
+<div id="filters">
+    <button type="button" data-filter="all" class="active">All</button>
+    <button type="button" data-filter="open">Open</button>
+    <button type="button" data-filter="mine">My tickets</button>
+</div>
+<p id="ticket-count"><?= count($tickets) ?> tickets</p>
 <table>
     <thead>
         <tr>
@@ -29,7 +35,7 @@ $tickets = $pdo->query($sql)->fetchAll();
             <th>Created</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="ticket-rows">
     <?php foreach ($tickets as $ticket): ?>
         <tr>
             <td><?= (int) $ticket['id'] ?></td>
@@ -49,3 +55,4 @@ $tickets = $pdo->query($sql)->fetchAll();
     <?php endforeach; ?>
     </tbody>
 </table>
+<script src="/ticket-list.js"></script>
