@@ -14,6 +14,8 @@ $sql = "SELECT t.id, t.title, t.priority, t.status, t.created_at,
 
 $tickets = $pdo->query($sql)->fetchAll();
 
+$pageTitle = 'Tickets';
+require __DIR__ . '/includes/header.php';
 ?>
 
 <h1>Tickets</h1>
@@ -56,3 +58,4 @@ $tickets = $pdo->query($sql)->fetchAll();
     </tbody>
 </table>
 <script src="/ticket-list.js"></script>
+<?php require __DIR__ . '/includes/footer.php'; ?>
