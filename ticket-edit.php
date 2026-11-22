@@ -74,10 +74,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         header('Location: /index.php');
         exit;
-    }
+        }
 }
+
+$pageTitle = 'Edit ticket';
+require __DIR__ . '/includes/header.php';
 ?>
-<h1>Edit ticket #<?= (int) $id ?></h1>
+
+<main class="container">
+
+    <h1>Edit ticket #<?= (int) $id ?></h1>
+
+    <div class="card">
 
 <form method="post" action="/ticket-edit.php?id=<?= (int) $id ?>">
     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
@@ -128,6 +136,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
     </div>
 
-    <button type="submit">Save changes</button>
+        <button type="submit">Save changes</button>
     <a href="/index.php">Cancel</a>
 </form>
+
+    </div>
+
+</main>
+
+<?php require __DIR__ . '/includes/footer.php'; ?>

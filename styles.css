@@ -1,0 +1,565 @@
+/*  FIX-IT DESK - GENERAL STYLING */
+
+/* Colour palette */
+
+:root {
+    --purple: #540D6E;
+    --pink: #EE4266;
+    --yellow: #FFD23F;
+    --teal: #38CEAC;
+
+    --background: #F7F7FA;
+    --white: #FFFFFF;
+    --text: #302638;
+    --muted: #716879;
+    --border: #E6E1EA;
+}
+
+/* Box model */
+
+* {
+    box-sizing: border-box;
+}
+
+/* General page styling */
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Headings */
+
+h1, h2, h3 {
+    color: var(--purple);
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 21px;
+}
+
+/* Links */
+
+a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* HEADER AND NAVIGATION */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 16px 5%;
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/* Website branding */
+
+.brand {
+    color: var(--white);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+/* Navigation links */
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-header nav a {
+    color: var(--white);
+    padding: 8px 13px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.site-header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+}
+
+/* Logged-in user information */
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--white);
+}
+
+.user-box form {
+    margin: 0;
+}
+
+
+/* BUTTONS */
+
+button,
+.btn {
+    display: inline-block;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--teal);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+
+button:hover,
+.btn:hover {
+    background-color: #28B997;
+}
+
+/* Primary buttons */
+
+.btn-primary {
+    background-color: var(--teal);
+    color: var(--text);
+}
+
+/* Delete and dangerous actions */
+
+.btn-danger {
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background-color: #D83256;
+}
+
+/* Logout button */
+
+.user-box .btn {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+
+/* FORMS AND INPUT FIELDS */
+
+form {
+    margin-top: 20px;
+}
+
+/* Form sections */
+
+form > div {
+    margin-bottom: 19px;
+}
+
+/* Field labels */
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--purple);
+    font-weight: bold;
+}
+
+/* Text fields, dropdowns and text areas */
+
+input:not([type="hidden"]),
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background-color: var(--white);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* Text area */
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Input focus effect */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--teal);
+    border-color: var(--teal);
+}
+
+/* Links beside form buttons */
+
+form > a {
+    margin-left: 12px;
+}
+
+
+/* TICKET DASHBOARD AND FILTERS */
+
+/* Filter buttons container */
+
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Default filter buttons */
+
+#filters button {
+    background-color: var(--white);
+    color: var(--purple);
+    border: 1px solid var(--border);
+}
+
+/* Selected filter button */
+
+#filters button.active {
+    background-color: var(--purple);
+    color: var(--white);
+    border-color: var(--purple);
+}
+
+/* Ticket count */
+
+#ticket-count {
+    color: var(--muted);
+    font-weight: bold;
+}
+
+/* Ticket table */
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    background-color: var(--white);
+}
+
+/* Table headings and cells */
+
+th,
+td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Table headings */
+
+th {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+/* Table row hover effect */
+
+tbody tr:hover {
+    background-color: #F5EFF8;
+}
+
+/* Ticket links */
+
+td a {
+    font-weight: bold;
+}
+
+
+/* TICKET DETAIL PAGE */
+
+/* Ticket heading and action buttons */
+
+.ticket-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ticket-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Ticket content layout */
+
+.ticket-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ticket-main,
+.ticket-side {
+    min-width: 0;
+}
+
+/* Description and information cards */
+
+.card {
+    padding: 22px;
+    margin-bottom: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* Ticket description */
+
+.description {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Notes */
+
+.note {
+    padding: 15px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--teal);
+    background-color: #F7F7FA;
+    border-radius: 5px;
+}
+
+.note-meta {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.note-body {
+    overflow-wrap: anywhere;
+}
+
+/* Ticket priority and status labels */
+
+.pill {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Priority colours */
+
+.priority-high {
+    background-color: #FCE0E7;
+    color: #A51D40;
+}
+
+.priority-medium {
+    background-color: #FFF1BE;
+    color: #745500;
+}
+
+.priority-low {
+    background-color: #D8F5ED;
+    color: #176B57;
+}
+
+/* Confirmation section */
+
+.confirm-box {
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #FFF8DC;
+    border: 1px solid var(--yellow);
+    border-radius: 8px;
+}
+
+
+/* USERS PAGE */
+
+.users-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.table-wrap table {
+    margin-top: 0;
+}
+
+/* ERROR AND SUCCESS MESSAGES */
+
+/* Error messages */
+
+.error {
+    padding: 10px 13px;
+    margin-top: 8px;
+    background-color: #FCE0E7;
+    border-left: 4px solid var(--pink);
+    border-radius: 5px;
+    color: #A51D40;
+}
+
+/* Success messages */
+
+.success,
+.flash {
+    padding: 12px 15px;
+    background-color: #D8F5ED;
+    border-left: 4px solid var(--teal);
+    border-radius: 5px;
+    color: #176B57;
+}
+
+/* General hints */
+
+.hint {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Dashboard notification */
+
+.flash {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+
+/* RESPONSIVE DESIGN - MOBILE FIRST */
+
+/* Default layout for smaller screens */
+
+.container {
+    width: 92%;
+    margin: 20px auto;
+}
+
+.ticket-layout,
+.users-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Allow navigation to wrap on smaller screens */
+
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Prevent wide tables from overflowing */
+
+table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Adjust content for larger screens */
+
+@media (min-width: 48em) {
+
+    .ticket-layout,
+    .users-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+}
+
+
+/* LOGIN PAGE */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--purple);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+.login-card {
+    padding: 35px;
+    background-color: var(--white);
+    border-radius: 12px;
+}
+
+.login-card h1,
+.login-card h2 {
+    text-align: center;
+}
+
+.login-card h1 {
+    margin-bottom: 5px;
+}
+
+.login-card h2 {
+    margin-top: 5px;
+}
+
+.login-card form {
+    margin-top: 25px;
+}
+
+.login-card button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-card .error {
+    margin-bottom: 15px;
+}

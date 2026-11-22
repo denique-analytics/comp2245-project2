@@ -79,48 +79,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Fix-It Desk</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
 
-    <h1>Fix-It Desk</h1>
-    <h2>Login</h2>
+<body class="login-page">
 
-    <?php if ($error !== ''): ?>
-        <p><?= htmlspecialchars($error, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?></p>
-    <?php endif; ?>
+    <main class="login-container">
 
-    <form action="login.php" method="POST">
+        <div class="login-card">
 
-        <input
-            type="hidden"
-            name="csrf_token"
-            value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>"
-        >
+            <h1>Fix-It Desk</h1>
+            <h2>Login</h2>
 
-        <label for="email">Email:</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
-            value="<?= htmlspecialchars($email, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>"
-            required
-        >
+            <?php if ($error !== ''): ?>
+                <p class="error">
+                    <?= htmlspecialchars($error, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
+                </p>
+            <?php endif; ?>
 
-        <br><br>
+            <form action="login.php" method="POST">
 
-        <label for="password">Password:</label>
-        <input
-            type="password"
-            id="password"
-            name="password"
-            required
-        >
+                <input type="hidden" name="csrf_token"
+                       value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
 
-        <br><br>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"
+                           value="<?= htmlspecialchars($email ?? '', ENT_QUOTES, 'UTF-8') ?>" required>
+                </div>
 
-        <button type="submit">Login</button>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
 
-    </form>
+                <button type="submit">Login</button>
+
+            </form>
+
+        </div>
+
+    </main>
 
 </body>
 </html>
